@@ -34,9 +34,10 @@ public class BoardDAO extends JDBConnect {
 		return totalCount;
 	}
 
+// 검색 조건에 맞는 게시물 목록을 반환합니다.
 	public List<BoardDTO> selectList(Map<String, Object> map) {
 		List<BoardDTO> bbs = new Vector<BoardDTO>();
-
+		// 결과(게시물 목록)를 담을 변수
 		String query = "SELECT * FROM board";
 		if (map.get("searchWord") != null) {
 			query += " WHERE " + map.get("searchField") + " " + " LIKE '%" + map.get("searchWord") + "%' ";
@@ -44,8 +45,8 @@ public class BoardDAO extends JDBConnect {
 		query += " ORDER BY num DESC ";
 
 		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
+			stmt = con.createStatement(); // 쿼리문 생성
+			rs = stmt.executeQuery(query); // 쿼리 실행
 
 			while (rs.next()) {// 결과를 순회하며...
 				// 한 행 (게시물 하나)의 내용을 DTO 에 저장
@@ -56,9 +57,9 @@ public class BoardDAO extends JDBConnect {
 				dto.setContent(rs.getString("content"));
 				dto.setPostdate(rs.getDate("postdate"));
 				dto.setId(rs.getString("id"));
-				dto.setVisitcount(rs.getString("Visitcount"));
+				dto.setVisitcount(rs.getString("visitcount"));
 
-				bbs.add(dto);
+				bbs.add(dto); // 결과 목록에 저장
 			}
 
 		} catch (Exception e) {

@@ -20,9 +20,9 @@ if (searchWord != null) {
 	param.put("searchWord", searchWord);
 }
 
-int totalCount = dao.selectCount(param);
-List<BoardDTO> boardLists = dao.selectList(param);
-dao.close();
+int totalCount = dao.selectCount(param); //게시물 수 확인
+List<BoardDTO> boardLists = dao.selectList(param); //게시물 목록 받기
+dao.close(); //DB 연결 닫기
 %>
 
 <!DOCTYPE html>
