@@ -15,7 +15,7 @@
 	<a href="FileUploadMain.jsp">파일 등록하기</a>
 	<%
 MyfileDAO dao= new MyfileDAO();
-List<MyfileDTO> fileList = dao.myFileList();
+List<MyfileDTO> fileLists = dao.myFileList();
 dao.close();
 %>
 	<table border="1">
@@ -40,7 +40,8 @@ dao.close();
 			<td><%= f.getPostdate() %></td>
 			<td><a
 				href="Download.jsp?oName=<%= URLEncoder.encode(f.getOfile(), "UTF-8") %>&sName=<%= URLEncoder.encode(f.getSfile(),"UTF-8") %>">[다운로드]</a></td>
-				</tr>
+		</tr>
+		<% } %>
 	</table>
 </body>
 </html>

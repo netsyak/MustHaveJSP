@@ -16,7 +16,7 @@ try{
 	MultipartRequest mr = new MultipartRequest(request, saveDirectory, maxPostSize, encoding);
 	
 	//2. 새로운 파일명 생성
-	String fileName= mr.getFilesystemName("attchedFile");
+	String fileName= mr.getFilesystemName("attachedFile");
 	String ext =fileName.substring(fileName.lastIndexOf("."));
 	String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date());
 	String newFileName = now + ext;
@@ -60,18 +60,5 @@ catch (Exception e){
 	e.printStackTrace();
 	request.setAttribute("errorMessage", "파일업로드 오류");
 	request.getRequestDispatcher("FileUploadMain.jsp").forward(request, response);
-}
-	 
+} 
 %>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
