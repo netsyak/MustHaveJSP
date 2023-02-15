@@ -6,20 +6,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>JSTL = fmt 1</title>
 </head>
 <body>
 <h4>숫자 포멧 설정</h4>
 <c:set var ="number1" value="12345"/>
 콤마 O : <fmt:formatNumber value="${ number1 }"/><br />
 콤마 X : <fmt:formatNumber value="${ number1 }" groupingUsed="False" /><br/>
-<fmt:formatNumber value="${ number1 }" type="currency" var="printnum1 />"
+<fmt:formatNumber value="${ number1 }" type="currency" var="printNum1" />
 통화기호 : ${printNum1 } <br />
 <fmt:formatNumber value="0.03" type="percent" var="printNum2" />
-퍼센트 : ${ PrintNUm2 }
+퍼센트 : ${ printNUm2 }
 
 <h4> 문자열을 숫자로 변경</h4>
-<c:set var="number2" nalte="6,789.01" />
+<c:set var="number2" value="6,789.01" />
 <fmt:parseNumber value="${ number=2 }" pattern="00,000.00" var="printNum3" />
 소수점까지 : ${ printNum3  }<br/>
 <fmt:parseNumber value="${ number2 }" integerOnly="ture" var="printNum4" />
