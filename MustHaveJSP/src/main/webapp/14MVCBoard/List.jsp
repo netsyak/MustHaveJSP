@@ -48,7 +48,7 @@
 							<!-- 번호 --> ${ map.totalCount-(((map.pageNum-1) * map.page.Size) + loop.index)}
 						</td>
 						<td align="left">
-							<!-- 제목(링크) --> <a href="../mvcboard/view/do?idx=${ row.idx }">${ row.title }
+							<!-- 제목(링크) --> <a href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }
 						</a>
 						</td>
 						<td>${ row.name }</td>

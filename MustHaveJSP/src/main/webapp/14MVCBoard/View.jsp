@@ -8,7 +8,7 @@
 <title>파일 첨부형 게시판</title>
 </head>
 <body>
-	<h2>파일 첨부형 게시판 - 상세 보기</h2>
+	<h2>파일 첨부형 게시판 - 상세 보기(View)</h2>
 
 	<table border="1" width="90%">
 		<colgroup>
@@ -27,13 +27,13 @@
 		</tr>
 		<tr>
 			<td>작성일</td>
-			<td>${ dao.postdate }</td>
+			<td>${ dto.postdate }</td>
 			<td>조회수</td>
-			<td>${ dao.visitcount }</td>
+			<td>${ dto.visitcount }</td>
 		</tr>
 		<tr>
 			<td>제목</td>
-			<td colspan="3">${ dao.title }</td>
+			<td colspan="3">${ dto.title }</td>
 		</tr>
 		<tr>
 			<td>내용</td>
@@ -49,7 +49,7 @@
 						href="../mvcboard/download.do?ofile=${ dto.ofile }&sfile=${ dto.sfile }&idx=${ dto.idx }">[다운로드]</a>
 				</c:if></td>
 			<td>다운로드수</td>
-			<td>${ dao.downcount }</td>
+			<td>${ dto.downcount }</td>
 		</tr>
 
 		<!-- 하단 메뉴(버튼) -->
